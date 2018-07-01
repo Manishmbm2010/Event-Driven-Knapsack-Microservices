@@ -1,0 +1,28 @@
+version: '3'
+services:
+  knapsackinput:
+    build:
+      context: ./
+      dockerfile: Dockerfile-KnapSack-Input
+    ports:
+      - 8090:8090
+  knapsackadmin:
+    build:
+      context: ./
+      dockerfile: Dockerfile-KnapSack-Admin
+    ports:
+      - 8080:8080
+  knapsacksolution:
+    build:
+      context: ./
+      dockerfile: Dockerfile-KnapSack-Solution
+    ports:
+     - 8070:8070
+  kafka:
+    image: spotify/kafka
+    environment:
+      - ADVERTISED_HOST=kafka
+      - ADVERTISED_PORT=9092 
+    ports:
+      - 2181:2181
+      - 9092:9092

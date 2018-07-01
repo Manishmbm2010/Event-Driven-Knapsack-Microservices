@@ -1,0 +1,10 @@
+com/knapsack/solution/service/Sender.class
+com/knapsack/solution/config/ReceiverConfig.class
+com/knapsack/solution/model/KnapsackModel.class
+com/knapsack/solution/model/Solution.class
+com/knapsack/solution/service/Receiver.class
+com/knapsack/solution/config/SenderConfig.class
+com/knapsack/solution/Main.class
+com/knapsack/solution/service/SolutionService.class
+com/knapsack/solution/model/Problem.class
+com/knapsack/solution/model/TimeStamp.class

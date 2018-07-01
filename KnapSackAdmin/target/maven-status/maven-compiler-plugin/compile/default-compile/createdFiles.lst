@@ -1,0 +1,12 @@
+com/knapsack/admin/config/ReceiverConfig.class
+com/knapsack/admin/Main.class
+com/knapsack/admin/model/TaskList.class
+com/knapsack/admin/repository/TaskRepository.class
+com/knapsack/admin/service/Receiver.class
+com/knapsack/admin/model/Problem.class
+com/knapsack/admin/controller/AdminController.class
+com/knapsack/admin/model/Solution.class
+com/knapsack/admin/model/TimeStamp.class
+com/knapsack/admin/model/Tasks.class
+com/knapsack/admin/service/AdminService.class
+com/knapsack/admin/model/KnapsackModel.class

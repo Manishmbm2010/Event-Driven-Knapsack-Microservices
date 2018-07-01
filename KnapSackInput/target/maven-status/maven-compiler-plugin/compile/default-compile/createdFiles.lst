@@ -1,0 +1,15 @@
+com/knapsack/input/Main.class
+com/knapsack/input/config/SenderConfig.class
+com/knapsack/input/service/Sender.class
+com/knapsack/input/model/Solution.class
+com/knapsack/input/model/Problem.class
+com/knapsack/output/views/Views$TaskResponse.class
+com/knapsack/input/model/TimeStamp.class
+com/knapsack/input/service/MainService.class
+com/knapsack/input/repository/KnapsackJPAInterface.class
+com/knapsack/input/service/Receiver.class
+com/knapsack/input/config/ReceiverConfig.class
+com/knapsack/output/views/Views$FullResponse.class
+com/knapsack/input/controller/MainController.class
+com/knapsack/input/model/KnapsackModel.class
+com/knapsack/output/views/Views.class
