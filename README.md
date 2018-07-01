@@ -1,8 +1,4 @@
-##Author
-
-* **Manish Jain**
-
-## Project : Event Driven Knapsack Micorservice (Knapsack solution as a Service) 
+## Project : Event-Driven Knapsack Micorservice (Knapsack solution as a Service) 
 
 ## Technology stack
 
@@ -12,20 +8,21 @@
 4. Maven for dependency management
 5. Docker for containerizing the solution
 
-##Microservice Archtiecture##
+## Code provide "knapsack solution" as a service that runs in a docker container.
 
-Solution contain 4 microservices running in separate docker containers.
-
-1. User facing Input Microservice to get the knapsack problem in and provide the status and solution of individual problem.
-2. Solution Microservice that just process the process the problem and post the solution back to kafka.
-3. Admin Microservice , that always read for first two micorservice for new knapsack problem and any update on existing problem and update its state accordingly.
-
-##Code provide "knapsack solution" as a service that runs in a docker container.
 You can do below things via rest services
-##
+
 1. Submit knapsack probelm.
 2. Retrive the task status and their solutions.
 3. Get the complete list of tasks and the stage in which they are currently running.(stages = submitted ,started,completed).
+
+## Microservice Archtiecture
+
+Overall Solution contains 3 microservices(Input,Solution,Admin), running in separate docker containers and Kafka container as a event store to make async communocation between different services.
+
+1. User facing Input Microservice to get the knapsack problem in and provide the status and solution of individual problem.
+2. Solution Microservice reads the new problem from kafka , process the solution and post the solution back to kafka.
+3. Admin Microservice reads for first two micorservices for any new knapsack problem or update of on existing problem and update its state accordingly to provide the overall view of all the problems.
  
 ### Getting Started
 
@@ -57,12 +54,12 @@ Input/Output Json format has been attached in separate file withe examples , Ple
 * http://localhost:8090/knapsack/solutions/{id}		(method=GET) 
 * http://localhost:8080/knapsack/admin/tasks/		(method=GET)
 
-Yet to Be configure:
+Yet to Be configured:
 * http://localhost:8080//knapsack/admin/logs		(method=GET)
 * http://localhost:8080//knapsack/admin/health		(method=GET)
 * http://localhost:8080//knapsack/admin/shutdown 	(method=POST)
 * http://localhost:8080/v2/api-docs			(method=GET)
-* http://localhost:8080/swagger-ui.html     
+* http://localhost:8080/swagger-ui.html
 
 ### Running the tests
 
@@ -79,20 +76,28 @@ Time Complexity: O(nW) where n is the number of items and W is the capacity of k
 
 ### Acknowledgments
 
-* Find we few best resources for finalizing the design and completeing the project
+Find we few best resources for finalizing the design and completeing the project
+
+* Architecture design decison based on below resource
+** 1. https://www.youtube.com/watch?v=IR1NLfaq7PU&t=2492s&list=PLcgk_TLI6Dot90MJl7Qo2wIL-3EqcjOeb&index=3 
 * https://www.toptal.com/java/spring-boot-rest-api-error-handling
 * https://spring.io/guides/gs/spring-boot-docker/
+* https://docs.docker.com/
 * Java Brains :  Spring Boot tutorail Series
 * Sample youtube link :  https://www.youtube.com/watch?v=msXL2oDexqw&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x
 
 
 ### Scope for improvement 
 
-* This solution can be extended with the usage of persistent storage for real time production system, currently it uses system RAM/swap
-* Currently solution has been designed with embedded derby database , can be updated with separate database image with persistent storage.
-* Exception handling can be extended further.
+* Currently solution has been designed with embedded derby database , can be configured with separate database docker image with persistent mount.
+* kafka container can be mounted on persistent storage.
+* Spring security can be implemented.
+* Deployment instruction can be prepared to deploy on Kubernetes cluster.
+* Exception handling has to be added.
 * Logging can be enhanced.
-* Comments can be added at many places to make the maintenace of code much simpler.
+* Comments can be improved and extended further to make the maintenace of code much simpler later on.
 
 
+## Author
 
+ **Manish Jain**
