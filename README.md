@@ -1,6 +1,6 @@
-## Project : Event-Driven Knapsack Micorservice (Knapsack solution as a Service) 
+### Project : Event-Driven Knapsack Micorservice (Knapsack solution as a Service) 
 
-## Technology stack
+### Technology stack
 
 1. Spring Boot for writing Microservice
 2. Kafka for Event Store
@@ -8,7 +8,7 @@
 4. Maven for dependency management
 5. Docker for containerizing the solution
 
-## Code provide "knapsack solution" as a service that runs in a docker container.
+### Code provide "knapsack solution" as a service that runs in a docker container.
 
 You can do below things via rest services
 
@@ -16,7 +16,7 @@ You can do below things via rest services
 2. Retrive the task status and their solutions.
 3. Get the complete list of tasks and the stage in which they are currently running.(stages = submitted ,started,completed).
 
-## Microservice Archtiecture
+### Microservice Archtiecture
 
 Overall Solution contains 3 microservices(Input,Solution,Admin), running in separate docker containers and Kafka container as a event store to make async communocation between different services.
 
